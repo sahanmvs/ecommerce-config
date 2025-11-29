@@ -1,0 +1,10 @@
+server:
+  port: 8086
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+stripe:
+  secret: ${STRIPE_SECRET}
+  webhookSecret: ${STRIPE_WEBHOOK_SECRET}
+
