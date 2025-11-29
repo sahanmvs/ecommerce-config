@@ -1,0 +1,22 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: 
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+  kafka:
+    producer:
+      bootstrap-servers: 
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      bootstrap-servers: 
+      group-id: payment-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: "com.mvs.common_module.events"
+webUrl: 
