@@ -1,9 +1,10 @@
 server:
   port: 8086
 management:
-  tracing:
-    sampling:
-      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
 stripe:
   secret: ${STRIPE_SECRET}
   webhookSecret: ${STRIPE_WEBHOOK_SECRET}
