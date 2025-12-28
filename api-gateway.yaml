@@ -53,6 +53,8 @@ security:
     '[POST:/api/products/**]': ["ADMIN"]
     '[PUT:/api/products/**]': ["ADMIN"]
     '[DELETE:/api/products/**]': ["ADMIN"]
+    '[GET:/api/inventories/**]': ["ADMIN"]
+    '[POST:/api/inventories/**]': ["ADMIN"]
 springdoc:
   swagger-ui:
     urls:
