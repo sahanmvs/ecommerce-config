@@ -34,13 +34,13 @@ spring:
               predicates:
                 - Path=/api/orders/**
               filters:
-                - RewritePath=/api/orders/(?<segment>.*), /orders/$\{segment}
+                - RewritePath=/api/orders(?<segment>/?.*), /orders${segment}
             - id: cart-service
               uri: lb://cart-service
               predicates:
                 - Path=/api/carts/**
               filters:
-                - RewritePath=/api/carts/(?<segment>.*), /carts/$\{segment}
+                - RewritePath=/api/carts(?<segment>/?.*), /carts${segment}
             - id: payment-service
               uri: lb://payment-service
               predicates:
