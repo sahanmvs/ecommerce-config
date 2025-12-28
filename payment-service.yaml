@@ -9,4 +9,6 @@ stripe:
   secret: ${STRIPE_SECRET}
   webhookSecret: ${STRIPE_WEBHOOK_SECRET}
 webUrl: ${WEB_URL:http://localhost:4200}
-
+springdoc:
+  api-docs:
+    path: /payments/v3/api-docs
