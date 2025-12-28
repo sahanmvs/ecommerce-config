@@ -49,7 +49,7 @@ spring:
                 - RewritePath=/api/payments/(?<segment>.*), /payments/$\{segment}
 security:
   role-rules:
-    '[GET:/api/products/**]': ["ADMIN", "USER"]
+    '[GET:/api/products/**]': ["PERMIT_ALL"]
     '[POST:/api/products/**]': ["ADMIN"]
     '[PUT:/api/products/**]': ["ADMIN"]
     '[DELETE:/api/products/**]': ["ADMIN"]
