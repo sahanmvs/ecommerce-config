@@ -8,3 +8,7 @@ management:
 jwt:
   secret: ${JWT_SECRET}
   expiration: 3600
+
+springdoc:
+  api-docs:
+    path: /users/v3/api-docs
