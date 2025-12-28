@@ -14,27 +14,39 @@ spring:
             - id: product-service
               uri: lb://product-service
               predicates:
-                - Path=/api/product/**
+                - Path=/api/products/**
+              filters:
+                - RewritePath=/api/products/(?<segment>.*), /products/$\{segment}  
             - id: user-service
               uri: lb://user-service
               predicates:
-                - Path=/api/user/**
+                - Path=/api/users/**
+              filters:
+                - RewritePath=/api/users/(?<segment>.*), /users/$\{segment}
             - id: inventory-service
               uri: lb://inventory-service
               predicates:
-                - Path=/api/inventory/**
+                - Path=/api/inventories/**
+              filters:
+                - RewritePath=/api/inventories/(?<segment>.*), /inventories/$\{segment}  
             - id: order-service
               uri: lb://order-service
               predicates:
-                - Path=/api/order/**
+                - Path=/api/orders/**
+              filters:
+                - RewritePath=/api/orders/(?<segment>.*), /orders/$\{segment}
             - id: cart-service
               uri: lb://cart-service
               predicates:
-                - Path=/api/cart/**
+                - Path=/api/carts/**
+              filters:
+                - RewritePath=/api/carts/(?<segment>.*), /carts/$\{segment}
             - id: payment-service
               uri: lb://payment-service
               predicates:
-                - Path=/api/payment/**
+                - Path=/api/payments/**
+              filters:
+                - RewritePath=/api/payments/(?<segment>.*), /payments/$\{segment}
 security:
   role-rules:
     '[GET:/api/product/**]': ["ADMIN", "USER"]
