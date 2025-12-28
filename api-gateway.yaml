@@ -53,4 +53,19 @@ security:
     '[POST:/api/products/**]': ["ADMIN"]
     '[PUT:/api/products/**]': ["ADMIN"]
     '[DELETE:/api/products/**]': ["ADMIN"]
+springdoc:
+  swagger-ui:
+    urls:
+      - name: "User Service"
+        url: /api/users/v3/api-docs
+      - name: "Inventory Service"
+        url: /api/inventories/v3/api-docs
+      - name: "Product Service"
+        url: /api/products/v3/api-docs
+      - name: "Cart Service"
+        url: /api/carts/v3/api-docs
+      - name: "Order Service"
+        url: /api/orders/v3/api-docs
+      - name: "Payment Service"
+        url: /api/payments/v3/api-docs
 
